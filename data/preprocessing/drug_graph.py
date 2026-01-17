@@ -12,19 +12,6 @@ logger = logging.getLogger(__name__)
 
 
 class Drug3DGraphBuilder:
-    """
-    药物3D图构建器
-
-    节点特征:
-        - 150维: 丰富原子特征（默认）
-        - 78维: DTA-GTOmega风格原子特征
-
-    边特征 (10维):
-        - 键类型 (4维: single, double, triple, aromatic)
-        - 是否共轭 (1维)
-        - 是否在环中 (1维)
-        - 立体化学 (4维)
-    """
 
     def __init__(
             self,
@@ -55,7 +42,7 @@ class Drug3DGraphBuilder:
 
     @staticmethod
     def _suppress_rdkit_warnings():
-        # DTA-GTOmega对齐时不加显式H，关闭RDKit提示以避免刷屏。
+        
         try:
             RDLogger.DisableLog('rdApp.warning')
         except Exception:
@@ -70,7 +57,7 @@ class Drug3DGraphBuilder:
                 logger.error(f"Invalid SMILES: {smiles}")
                 return None
 
-            # 对齐DTA-GTOmega时不添加显式氢
+            
             if not self.align_gtomega:
                 mol = Chem.AddHs(mol)
             num_atoms = mol.GetNumAtoms()
@@ -354,7 +341,7 @@ class Drug3DGraphBuilder:
 
     def _get_bond_features(self, bond: Chem.Bond) -> np.ndarray:
         """
-        键特征 (10维) - 和DTA-GTOmega一致
+        键特征 (10维) 
 
         包括:
             - 键类型 (4维: single, double, triple, aromatic)

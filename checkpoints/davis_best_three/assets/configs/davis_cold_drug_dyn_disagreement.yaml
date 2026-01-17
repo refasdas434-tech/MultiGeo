@@ -1,0 +1,80 @@
+model:
+  hidden_dim: 32
+  num_attention_heads: 4
+  num_gnn_layers: 2
+  dropout_rate: 0.25
+  pool_ratio: 0.5
+  align_gtomega: true
+  conformer_fusion: attention
+  dynamic_conformer:
+    hidden_dim: 128
+    num_layers: 1
+    dropout_rate: 0.1
+    bidirectional: false
+    fusion_mode: disagreement
+  interaction_rank: 64
+  use_checkpoint: false
+features:
+  protein:
+    node_dim: 256
+    edge_dim: 0
+  drug:
+    node_dim: 78
+    edge_dim: 10
+graph_construction:
+  protein:
+    contact_threshold: 5
+    secondary_structure_window: 5
+    use_plddt: true
+    use_contact_map: true
+    contact_map_dir: data/Davis/contact_maps
+    max_protein_len: 800
+    std_factor: 1.0
+    max_conformers: 5
+    use_multi_conformer: true
+    conformer_selection:
+      enabled: true
+      std_factor: 1.0
+      fallback_to_all: true
+      use_cache: true
+  drug:
+    edge_threshold: 5
+    max_conformers: 10
+    energy_minimize: true
+    use_spatial_edges: false
+training:
+  num_epochs: 300
+  batch_size: 64
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  accumulation_steps: 1
+  optimizer: adam
+  num_protein_conformers: 5
+  use_amp: true
+  amp_dtype: fp16
+  loss_weights:
+    mse: 1.0
+    ranking: 0.0
+    pearson: 0.0
+  scheduler:
+    type: reduce_on_plateau
+    factor: 0.98
+    patience: 4
+    min_lr: 1.0e-05
+  early_stopping:
+    patience: 30
+    min_delta: 0.0001
+    monitor: loss
+data:
+  num_workers: 6
+  pin_memory: true
+  cache_dir: assets/cache/davis
+  use_cache: true
+  label_normalization: true
+general:
+  seed: 0
+  save_interval: 5
+  log_interval: 5
+  project_name: GTOmega-DTA-Davis-DynDisagreement
+  use_wandb: false

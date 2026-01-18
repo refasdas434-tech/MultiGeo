@@ -54,3 +54,11 @@ Run the following command to check if DGL loads correctly:
 ```bash
 python -c "import dgl; import torch; print(f'DGL Backend: {dgl.backend.backend_name}'); print('Success')"
 ```
+
+## 🚀 Reproduction
+
+We provide pre-trained models and specific configuration files to reproduce the Cold-Start experimental results on the Davis dataset.
+
+### 1. File Locations
+- **Configuration Files**: Located in `checkpoints/davis_best_three/assets/configs/`. This directory contains the configuration files for the three cold-start settings.
+- **Pre-trained Weights**: Located in `checkpoints/MultiGeo_davis_dyn_disagreement/`.

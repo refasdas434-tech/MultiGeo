@@ -62,3 +62,17 @@ We provide pre-trained models and specific configuration files to reproduce the 
 ### 1. File Locations
 - **Configuration Files**: Located in `checkpoints/davis_best_three/assets/configs/`. This directory contains the configuration files for the three cold-start settings.
 - **Pre-trained Weights**: Located in `checkpoints/MultiGeo_davis_dyn_disagreement/`.
+
+### Running Inference
+
+Use the `inference.py` script to evaluate the model. You can reproduce the results for **Cold Drug**, **Cold Target**, or **Cold Both** settings by specifying the `--split_type` and pointing to the corresponding checkpoint.
+
+#### Example: Cold Drug Setting
+```bash
+python inference.py \
+  --data_root data/Davis \
+  --protein_conformer_dir data/Davis/Davis_results \
+  --model_path checkpoints/MultiGeo_davis_dyn_disagreement/Davis/cold_drug/best_model.pt \
+  --dataset Davis \
+  --split_type cold_drug
+```

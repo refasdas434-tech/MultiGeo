@@ -1,8 +1,7 @@
 
-```markdown
 ## 🛠 Installation
 
- This project requires a specific combination of **PyTorch 2.1.0** and **CUDA 12.1** to ensure compatibility with DGL and avoid dependency conflicts. Please follow the steps below strictly.
+ This project requires a specific combination of PyTorch 2.1.0 and CUDA 12.1 to ensure compatibility with DGL and avoid dependency conflicts. Please follow the steps below strictly.
 
 ### 1. Create and Activate Environment
 ```bash

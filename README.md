@@ -57,7 +57,7 @@ python -c "import dgl; import torch; print(f'DGL Backend: {dgl.backend.backend_n
 
 ## 🚀 Reproduction
 
-We provide pre-trained models and specific configuration files to reproduce the Cold-Start experimental results on the Davis dataset.
+We provide pre-trained models and specific configuration files to reproduce the Cold-Start experimental results on the Davis and KIBA dataset.
 
 ### 1. File Locations
 - **Configuration Files**: Located in `checkpoints/davis_best_three/assets/configs/`. This directory contains the configuration files for the three cold-start settings.

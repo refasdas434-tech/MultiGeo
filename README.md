@@ -76,3 +76,11 @@ python inference.py \
   --dataset Davis \
   --split_type cold_drug
 ```
+
+```markdown
+## 📂 Data Availability
+
+Due to the significant file size of the datasets and pre-processed features, they cannot be hosted directly on this GitHub repository. Furthermore, to strictly adhere to the double-blind review policy and maintain anonymity during the submission process, we are temporarily withholding external download links.
+
+**We will release the full dataset and pre-trained weights via a public cloud storage link  immediately upon the paper's acceptance/publication.**
+```

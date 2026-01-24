@@ -15,6 +15,6 @@
 
 ## Notes
 - "-" indicates the metric was not reported for that model
-- **Bold** values indicate the results from MultiGeo-DTA model
+- **Bold** values indicate the best performance across all models
 - Lower MSE values indicate better performance
 - Higher PCC and Rm2 values indicate better performance

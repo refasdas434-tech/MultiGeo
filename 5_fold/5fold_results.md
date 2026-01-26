@@ -28,7 +28,7 @@
 | Deepdta | 0.194 | - | 0.630 |
 | DeepDtaGen | 0.146 | - | 0.748 |
 | DTA-GTOmega | 0.174 | 0.868 | 0.707 |
-| **MultiGeo** | **0.143** | **0.892** | **0.756** |
+| **MultiGeo** | **0.139** | **0.895** | **0.780** |
 
 ## Notes
 - "-" indicates the metric was not reported for that model

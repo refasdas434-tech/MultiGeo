@@ -35,3 +35,4 @@
 - **Bold** values indicate the best performance across all models
 - Lower MSE values indicate better performance
 - Higher PCC and Rm2 values indicate better performance
+- All models use the same data split to ensure fair comparison

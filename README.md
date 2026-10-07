@@ -80,6 +80,7 @@ python inference.py \
 
 ## 📂 Data Availability
 
-Due to the significant file size of the datasets and pre-processed features, they cannot be hosted directly on this GitHub repository. Furthermore, to strictly adhere to the double-blind review policy and maintain anonymity during the submission process, we are temporarily withholding external download links.
+The files required for reproducing the experiments are available through the Baidu Netdisk share below. The shared folder contains six files, including `davis_5fold_cache.tar`.
 
-We will release the full dataset and pre-trained weights via a public cloud storage link  immediately upon the paper's acceptance/publication.
+- **Download link:** [Baidu Netdisk](https://pan.baidu.com/s/13rmy7U8Fyl63HKmBF9E1KA?pwd=gttu)
+- **Extraction code:** `gttu`
